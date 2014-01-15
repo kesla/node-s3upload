@@ -6,7 +6,8 @@
     "aws-sdk": "~2.0.0-rc6",
     "mime": "~1.2.11",
     "glob": "~3.2.8",
-    "graceful-fs": "~2.0.1"
+    "graceful-fs": "~2.0.1",
+    "compressible": "~1.0.0"
   },
   "name": "s3sync",
   "version": "0.0.0",

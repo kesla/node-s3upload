@@ -3,6 +3,7 @@
 var path = require('path')
   , zlib = require('zlib')
 
+  , compressible = require('compressible')
   , fs = require('graceful-fs')
   , glob = require('glob')
   , mime = require('mime')
@@ -22,7 +23,7 @@ var path = require('path')
       })
     }
   , maybeGzip = function (contentType, buffer, callback) {
-      if (!contentType || contentType.slice(0, 5) === 'image')
+      if (!contentType || !compressible(contentType))
         return callback(null)
 
       zlib.gzip(buffer, callback)
