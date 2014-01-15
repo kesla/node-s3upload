@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var path = require('path')
+  , zlib = require('zlib')
 
   , fs = require('graceful-fs')
   , glob = require('glob')
@@ -20,6 +21,12 @@ var path = require('path')
         callback(null, data.LocationConstraint)
       })
     }
+  , maybeGzip = function (contentType, buffer, callback) {
+      if (!contentType || contentType.slice(0, 5) === 'image')
+        return callback(null)
+
+      zlib.gzip(buffer, callback)
+    }
 
 mime.default_type = null
 
@@ -36,20 +43,32 @@ getRegion(function (err, region) {
         else
           throw err
 
-      var s3options = {
-        Bucket: bucket,
-        Body: file,
-        Key: match
-      }
+      maybeGzip(contentType, file, function (err, gzipped) {
+        var s3options = {
+          Bucket: bucket,
+          Key: match
+        }
 
-      if (contentType)
-        s3options.ContentType = contentType
-
-      s3.putObject(s3options, function (err) {
         if (err)
           throw err
 
-        console.log('uploaded %s finished (%s kb)', match, Math.round(file.length / 1024))
+        if (gzipped) {
+          s3options.Body = gzipped
+          s3options.ContentEncoding = 'gzip'
+        } else {
+          s3options.Body = file
+        }
+
+        if (contentType)
+          s3options.ContentType = contentType
+
+        s3.putObject(s3options, function (err) {
+          if (err)
+            throw err
+
+          console.log('uploaded %s finished (%s kb)', match, Math.round(file.length / 1024))
+        })
+
       })
 
     })
