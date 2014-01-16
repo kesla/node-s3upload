@@ -1,4 +1,7 @@
 {
+  "name": "s3sync",
+  "version": "0.0.0",
+  "description": "An opinionated application to sync a folder with a s3 bucket.",
   "bin": {
     "s3sync2": "sync.js"
   },
@@ -9,9 +12,7 @@
     "graceful-fs": "~2.0.1",
     "compressible": "~1.0.0"
   },
-  "name": "s3sync",
-  "version": "0.0.0",
-  "main": "sync.js",
+  "global": true,
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
