@@ -1,18 +1,18 @@
-# node-s3sync
+# node-s3upload
 
-An opinionated application to sync a folder with a s3 bucket.
+An opinionated application to upload a folder to a s3 bucket.
 
 ## installation
 
 ```
-  npm install -g s3sync
+  npm install -g s3upload
 ```
 
 ## features
 
 * Content-Type is set based on file extension, so example.png will get the Content-Type "image/png"
 * Files that are compressible (according to the [compressible](https://npmjs.org/package/compressible) module) are gzipped and the Content-Encoding is set correctly
-* When syncing you define what files to include using a glob (e.g "**/*.js" to only sync javascript files)
+* When uploading you define what files to include using a glob (e.g "**/*.js" to only upload javascript files)
 * Region for the bucket is automatically identified, but you need to create the bucket yourself in AWS beforehand
 
 ## usage
@@ -20,7 +20,7 @@ An opinionated application to sync a folder with a s3 bucket.
 ```
   export AWS_ACCESS_KEY_ID=*access key from AWS*
   export AWS_SECRET_ACCESS_KEY=*secret access key from AWS*
-  s3sync "*/**" bucket-name
+  s3upload "*/**" bucket-name
 ```
 
 ## licence

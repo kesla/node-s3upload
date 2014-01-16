@@ -1,9 +1,9 @@
 {
-  "name": "s3sync",
+  "name": "s3upload",
   "version": "0.0.0",
-  "description": "An opinionated application to sync a folder with a s3 bucket.",
+  "description": "An opinionated application to upload a folder to a s3 bucket.",
   "bin": {
-    "s3sync2": "sync.js"
+    "s3upload2": "upload.js"
   },
   "dependencies": {
     "aws-sdk": "~2.0.0-rc6",
