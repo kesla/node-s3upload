@@ -6,7 +6,7 @@
     "s3upload": "upload.js"
   },
   "dependencies": {
-    "aws-sdk": "~2.0.0-rc6",
+    "aws-sdk": "~2.0.0-rc8",
     "mime": "~1.2.11",
     "glob": "~3.2.8",
     "graceful-fs": "~2.0.1",
