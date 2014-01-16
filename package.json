@@ -1,6 +1,6 @@
 {
   "name": "s3upload",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An opinionated application to upload a folder to a s3 bucket.",
   "bin": {
     "s3upload": "upload.js"
