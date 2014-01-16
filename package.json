@@ -18,5 +18,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "David Björklund <david.bjorklund@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "github.com:liketv/node-s3upload.git"
+  },
+  "keywords": [
+    "s3",
+    "sync",
+    "upload",
+    "aws"
+  ],
+  "bugs": {
+    "url": "https://github.com/liketv/node-s3upload/issues"
+  },
+  "homepage": "https://github.com/liketv/node-s3upload"
 }
