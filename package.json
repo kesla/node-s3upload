@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "An opinionated application to upload a folder to a s3 bucket.",
   "bin": {
-    "s3upload2": "upload.js"
+    "s3upload": "upload.js"
   },
   "dependencies": {
     "aws-sdk": "~2.0.0-rc6",
