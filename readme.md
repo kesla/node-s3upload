@@ -14,6 +14,7 @@ An opinionated application to upload a folder to a s3 bucket.
 * Files that are compressible (according to the [compressible](https://npmjs.org/package/compressible) module) are gzipped and the Content-Encoding is set correctly
 * When uploading you define what files to include using a glob (e.g "**/*.js" to only upload javascript files)
 * Region for the bucket is automatically identified, but you need to create the bucket yourself in AWS beforehand
+* Cache-Control is automatically set to `max-age=60` (one minute) if the Content-Type is "text/html"
 
 ## usage
 
