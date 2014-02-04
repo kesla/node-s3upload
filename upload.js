@@ -65,6 +65,8 @@ getRegion(function (err, region) {
 
         if (contentType === 'text/html')
           s3options.CacheControl = 'max-age=60'
+        else
+          s3options.CacheControl = 'max-age=31536000'
 
         s3.putObject(s3options, function (err) {
           if (err)
