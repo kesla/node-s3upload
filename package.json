@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "github.com:liketv/node-s3upload.git"
+    "url": "github.com:kesla/node-s3upload.git"
   },
   "keywords": [
     "s3",
@@ -30,7 +30,7 @@
     "aws"
   ],
   "bugs": {
-    "url": "https://github.com/liketv/node-s3upload/issues"
+    "url": "https://github.com/kesla/node-s3upload/issues"
   },
-  "homepage": "https://github.com/liketv/node-s3upload"
+  "homepage": "https://github.com/kesla/node-s3upload"
 }
